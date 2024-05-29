@@ -27,7 +27,7 @@ function loadImages(panelId, imagePath, imageCount) {
     var grid = document.getElementById(panelId + '-grid');
 
     for (let i = 1; i <= imageCount; i++) {
-        let imageName = `Dragon Ball (${i})`;
+        let imageName = `Dragon Ball  (${i})`;
         let imgPath = `${imagePath}/${imageName}.jpg`;
 
         let gridItem = document.createElement('div');
