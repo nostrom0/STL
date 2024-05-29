@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    loadImages('dragonball', 'images/dragonball', 100);
+    loadImages('DragonBall', 'images/dragonball', 100);
     loadImages('StarWars', 'images/StarWars', 3); // Ajusta el número de imágenes según lo necesario
     loadImages('panel3', 'images/panel3', 0); // Ajusta el número de imágenes según lo necesario
 
