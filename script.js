@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     loadImages('dragonball', 'images/dragonball', 100);
-    loadImages('panel2', 'images/panel2', 0); // Ajusta el número de imágenes según lo necesario
+    loadImages('panel2', 'images/StarWars', 0); // Ajusta el número de imágenes según lo necesario
     loadImages('panel3', 'images/panel3', 0); // Ajusta el número de imágenes según lo necesario
 
     // Cerrar la lightbox al hacer clic fuera de la imagen
@@ -35,7 +35,7 @@ function loadImages(panelId, imagePath, imageCount) {
     var grid = document.getElementById(panelId + '-grid');
 
     for (let i = 1; i <= imageCount; i++) {
-        let imageName = `DragonBall(${i})`;
+        let imageName = `${panelId}(${i})`;
         let imgPath = `${imagePath}/${imageName}.png`;
 
         let gridItem = document.createElement('div');
