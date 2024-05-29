@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     loadImages('dragonball', 'images/dragonball', 10);
     loadImages('panel2', 'images/panel2', 0); // Ajusta el número de imágenes según lo necesario
     loadImages('panel3', 'images/panel3', 0); // Ajusta el número de imágenes según lo necesario
+
+    // Cerrar la lightbox al hacer clic fuera de la imagen
+    var lightbox = document.getElementById('lightbox');
+    lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
 });
 
 function togglePanel(panelId) {
