@@ -51,9 +51,8 @@ h1 {
 
 .grid-item img {
     width: 100%;
-    height: auto;
+    height: 300px; /* Aumentar la altura de las imágenes aquí */
     object-fit: cover;
-    max-height: 300px; /* Cambiar la altura de las imágenes aquí */
 }
 
 .grid-item p {
