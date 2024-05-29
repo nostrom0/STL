@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Catálogo</h1>
+        
+        <div class="panel">
+            <div class="panel-header" onclick="togglePanel('panel1')">Panel 1</div>
+            <div class="panel-content" id="panel1">
+                <div class="grid" id="panel1-grid">
+                    <!-- Las imágenes se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header" onclick="togglePanel('panel2')">Panel 2</div>
+            <div class="panel-content" id="panel2">
+                <div class="grid" id="panel2-grid">
+                    <!-- Las imágenes se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header" onclick="togglePanel('panel3')">Panel 3</div>
+            <div class="panel-content" id="panel3">
+                <div class="grid" id="panel3-grid">
+                    <!-- Las imágenes se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" src="" alt="Imagen grande">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
