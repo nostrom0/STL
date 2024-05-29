@@ -1,47 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Cargar imágenes para cada panel
-    loadImages("panel1", "panel1-grid");
-    loadImages("panel2", "panel2-grid");
-    loadImages("panel3", "panel3-grid");
+    loadImages('dragonball', 'images/dragonball', 10);
+    loadImages('panel2', 'images/panel2', 3); // Ajusta el número de imágenes según lo necesario
+    loadImages('panel3', 'images/panel3', 3); // Ajusta el número de imágenes según lo necesario
 });
 
-function loadImages(panelName, gridId) {
-    var grid = document.getElementById(gridId);
+function togglePanel(panelId) {
+    var panelContent = document.getElementById(panelId);
+    panelContent.style.display = (panelContent.style.display === "block") ? "none" : "block";
+}
 
-    // Obtener la ruta de la carpeta de imágenes del panel
-    var folderPath = "images/" + panelName + "/";
+function showImage(src, caption) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImage = document.getElementById('lightbox-image');
+    var lightboxCaption = document.getElementById('lightbox-caption');
+    lightboxImage.src = src;
+    lightboxCaption.textContent = caption;
+    lightbox.style.display = 'flex';
+}
 
-    // Crear una solicitud para obtener el contenido de la carpeta
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Parsear la respuesta JSON
-                var files = JSON.parse(xhr.responseText);
-                // Iterar sobre los archivos y crear elementos de imagen
-                files.forEach(function(file) {
-                    var img = document.createElement("img");
-                    img.src = folderPath + file;
-                    img.alt = file;
-                    img.onclick = function() {
-                        showImage(folderPath + file, file);
-                    };
+function closeLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+}
 
-                    var p = document.createElement("p");
-                    p.textContent = file.replace(/\.[^/.]+$/, ""); // Eliminar la extensión del nombre del archivo
+function loadImages(panelId, imagePath, imageCount) {
+    var grid = document.getElementById(panelId + '-grid');
 
-                    var div = document.createElement("div");
-                    div.classList.add("grid-item");
-                    div.appendChild(img);
-                    div.appendChild(p);
+    for (let i = 1; i <= imageCount; i++) {
+        let imageName = `Dragon Ball (${i})`;
+        let imgPath = `${imagePath}/${imageName}.jpg`;
 
-                    grid.appendChild(div);
-                });
-            } else {
-                console.error("Error al cargar las imágenes del panel " + panelName);
-            }
-        }
-    };
-    xhr.open("GET", folderPath);
-    xhr.send();
+        let gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridItem.setAttribute('onclick', `showImage('${imgPath}', '${imageName}')`);
+
+        let img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = imageName;
+
+        let caption = document.createElement('p');
+        caption.textContent = imageName;
+
+        gridItem.appendChild(img);
+        gridItem.appendChild(caption);
+
+        grid.appendChild(gridItem);
+    }
 }
