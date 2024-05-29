@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    loadImages('DragonBall', 'images/dragonball', 100);
-    loadImages('StarWars', 'images/StarWars', 3); // Ajusta el número de imágenes según lo necesario
+    loadImages('dragonball', 'images/dragonball', 100);
+    loadImages('starwars', 'images/StarWars', 3); // Ajusta el número de imágenes según lo necesario
     loadImages('panel3', 'images/panel3', 0); // Ajusta el número de imágenes según lo necesario
 
     // Cerrar la lightbox al hacer clic fuera de la imagen
@@ -32,10 +32,10 @@ function closeLightbox() {
 }
 
 function loadImages(panelId, imagePath, imageCount) {
-    var grid = document.getElementById(panelId.toLowerCase() + '-grid'); // Convertir a minúsculas
+    var grid = document.getElementById(panelId + '-grid'); // Consistentes con los IDs en HTML
 
     for (let i = 1; i <= imageCount; i++) {
-        let imageName = `${panelId}(${i})`;
+        let imageName = `${capitalizeFirstLetter(panelId)}(${i})`;
         let imgPath = `${imagePath}/${imageName}.png`;
 
         let gridItem = document.createElement('div');
@@ -54,4 +54,8 @@ function loadImages(panelId, imagePath, imageCount) {
 
         grid.appendChild(gridItem);
     }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
