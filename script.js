@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    loadImages('DragonBall', 'images/dragonball', 100);
+    loadImages('DragonBall', 'images/DragonBall', 100);
     loadImages('StarWars', 'images/StarWars', 3); // Ajusta el número de imágenes según lo necesario
     loadImages('panel3', 'images/panel3', 0); // Ajusta el número de imágenes según lo necesario
 
@@ -32,7 +32,7 @@ function closeLightbox() {
 }
 
 function loadImages(panelId, imagePath, imageCount) {
-    var grid = document.getElementById(panelId + '-grid');
+    var grid = document.getElementById(panelId.toLowerCase() + '-grid'); // Convertir a minúsculas
 
     for (let i = 1; i <= imageCount; i++) {
         let imageName = `${panelId}(${i})`;
