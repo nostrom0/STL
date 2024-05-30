@@ -17,14 +17,14 @@ body {
 }
 
 .panel-header {
-    background-color: #f4f4f4;
+    background-color: #007bff;
     padding: 10px 15px;
     cursor: pointer;
     font-weight: bold;
 }
 
 .panel-header:hover {
-    background-color: white;
+    background-color: #f4f4f4;
     color: #007bff;
 }
 
