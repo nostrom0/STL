@@ -2,12 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
 .container {
     width: 90%;
     margin: auto;
+    max-width: 1200px;
 }
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    color: #333;
+}
+
 
 .panel {
     margin-bottom: 20px;
