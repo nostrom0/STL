@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     loadImages('DragonBall', 'images/DragonBall', 100);
-    loadImages('StarWars', 'images/StarWars', 3); // Ajusta el número de imágenes según lo necesario
+    loadImages('StarWars', 'images/StarWars', 79); // Ajusta el número de imágenes según lo necesario
     loadImages('OnePiece', 'images/OnePiece', 0); // Ajusta el número de imágenes según lo necesario
 
     // Cerrar la lightbox al hacer clic fuera de la imagen
