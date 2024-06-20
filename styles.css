@@ -97,9 +97,13 @@ h1 {
 
 /* Nuevo estilo para el enlace de aviso legal */
 .footer {
-    text-align: center;
-    padding: 20px 0;
+    text-align: right;
+    padding: 10px 20px;
     background-color: #f0f0f0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
 }
 
 .legal-link {
