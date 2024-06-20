@@ -118,8 +118,8 @@ h1 a:hover {
 /* Nuevo estilo para el enlace de aviso legal */
 .footer {
     text-align: right;
-    /*padding: 10px 20px;
-*/    background-color: #f0f0f0;
+    margin: 10px 20px;  
+    background-color: #f0f0f0;
     bottom: 0;
     right: 0;
     width: 100%;
