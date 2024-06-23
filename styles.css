@@ -133,3 +133,14 @@ h1 a:hover {
 .legal-link:hover {
     text-decoration: underline;
 }
+
+/* Estilos para el banner */
+.banner-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.banner {
+    max-width: 100%;
+    height: auto;
+}
